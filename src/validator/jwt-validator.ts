@@ -1,6 +1,6 @@
 import * as dayjs from 'dayjs';
 import { JwtClaims } from '../model/jwt-claims';
-import { JwtSignatureValidator } from './signatur-validator';
+import { JwtSignatureValidator } from './signature-validator';
 
 export class JwtValidator {
 

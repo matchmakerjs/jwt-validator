@@ -2,7 +2,7 @@ import * as crypto from 'crypto';
 import { RSAPublicKeySpec } from "../encryption/rsa-public-key-spec";
 import { JsonWebKey } from "../encryption/web-key";
 import { KeyResolver } from "../resolver/web-key-resolver";
-import { JwtSignatureValidator } from "./signatur-validator";
+import { JwtSignatureValidator } from "./signature-validator";
 
 export class RsaJwtSignatureValidator implements JwtSignatureValidator {
 

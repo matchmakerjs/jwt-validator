@@ -5,4 +5,5 @@ export interface JwtClaims {
     "iat": number;
     "nbf": number;
     "exp": number;
+    "aud": string | string[];
 }
