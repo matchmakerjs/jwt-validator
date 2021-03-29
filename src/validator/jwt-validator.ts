@@ -1,4 +1,3 @@
-import * as dayjs from 'dayjs';
 import { JwtClaims } from '../model/jwt-claims';
 import { JwtSignatureValidator } from './signature-validator';
 
@@ -16,7 +15,8 @@ export class JwtValidator {
             try {
                 const [headerB64, payloadB64, signatureB64] = jws.split('.');
                 const payload: JwtClaims = JSON.parse(Buffer.from(payloadB64, "base64").toString("utf8"));
-                if (!payload.exp || dayjs().isAfter(dayjs.unix(payload.exp).add(this.clockSkewInms, 'milliseconds'))) {
+
+                if (payload.exp && Date.now() > (payload.exp + this.clockSkewInms || 0)) {
                     return reject({
                         message: 'Expired token',
                         token: payload
