@@ -31,7 +31,6 @@ export class RsaJwtSignatureValidator implements JwtSignatureValidator {
                 }
                 resolve();
             } catch (error) {
-                // logger.error(error);
                 reject('Unable to verify token');
             }
         });
@@ -43,8 +42,8 @@ export class RsaJwtSignatureValidator implements JwtSignatureValidator {
             alg: string,
             kid: string
         } = JSON.parse(headerJsonString);
-        if (!header.kid) {
-            return Promise.reject('Invalid kid header');
+        if (!header?.kid) {
+            return Promise.reject('Missing kid header');
         }
         return this.keyResolver.resolve(header.kid);
     }
