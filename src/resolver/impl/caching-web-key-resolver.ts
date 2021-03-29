@@ -15,7 +15,7 @@ export class CachingKeyResolver implements KeyResolver {
 
     resolve(kid: string): Promise<JsonWebKey> {
         const matched = this.cache.filter(it => it.kid === kid);
-        console.log(matched.length ? 'key retrieved from cache' : 'key retrived from source');
+        // console.log(matched.length ? 'key retrieved from cache' : 'key retrived from source');
         if (matched.length) return Promise.resolve(matched[0].key);
         return this.keyResolver.resolve(kid)
             .then(key => {
