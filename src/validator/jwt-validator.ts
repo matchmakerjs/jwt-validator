@@ -16,7 +16,7 @@ export class JwtValidator {
                 const [headerB64, payloadB64, signatureB64] = jws.split('.');
                 const payload: JwtClaims = JSON.parse(Buffer.from(payloadB64, "base64").toString("utf8"));
 
-                if (payload.exp && Date.now() > (payload.exp + this.clockSkewInms || 0)) {
+                if (payload.exp && Date.now() > ((payload.exp * 1000) + (this.clockSkewInms || 0))) {
                     return reject({
                         message: 'Expired token',
                         token: payload
