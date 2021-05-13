@@ -1,4 +1,4 @@
-import { IncomingMessage } from "node:http";
+import { IncomingMessage } from "http";
 import { JwtClaims } from "../../model/jwt-claims";
 import { JwtValidator } from "../../validator/jwt-validator";
 import { AccessClaimsResolver } from "../access-claims-resolver";
