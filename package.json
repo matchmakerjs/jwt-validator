@@ -1,5 +1,5 @@
 {
-  "name": "@olaleyeone/jwt-validator",
+  "name": "@matchmakerjs/jwt-validator",
   "version": "0.0.1",
   "description": "jws validator",
   "main": "dist/index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Olaleyeone/node-jwt-validator.git"
+    "url": "git+https://github.com/matchmakerjs/jwt-validator.git"
   },
   "author": "Olaleye Afolabi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Olaleyeone/node-jwt-validator/issues"
+    "url": "https://github.com/matchmakerjs/jwt-validator/issues"
   },
-  "homepage": "https://github.com/Olaleyeone/node-jwt-validator#readme",
+  "homepage": "https://github.com/matchmakerjs/jwt-validator#readme",
   "devDependencies": {
     "@types/node": "^14.14.35",
     "rimraf": "^3.0.2",
