@@ -19,14 +19,14 @@ export class JwtValidator {
                 if (payload.exp && Date.now() > ((payload.exp * 1000) + (this.clockSkewInms || 0))) {
                     return reject({
                         message: 'Expired token',
-                        token: payload
+                        claims: payload
                     });
                 }
                 this.signatureValidator.validate(headerB64, payloadB64, signatureB64)
                     .then(() => resolve(payload))
                     .catch(err => reject({
                         message: (err && typeof err === 'string') ? err : 'Token failed validation',
-                        token: payload
+                        claims: payload
                     }));
             } catch (error) {
                 // logger.error({ info: 'error validating token', error });
