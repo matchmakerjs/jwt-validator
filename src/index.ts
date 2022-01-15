@@ -1,3 +1,4 @@
+export * from './encryption/rsa-public-key-spec';
 export * from './encryption/web-key';
 export * from './model/jwt-claims';
 export * from './resolver/access-claims-resolver';
