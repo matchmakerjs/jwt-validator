@@ -1,5 +1,6 @@
 import { JwtClaims } from "../model/jwt-claims";
+import { ErrorSender } from "./error-sender";
 
 export interface AccessClaimsResolver<E> {
-    getClaims(request: E): Promise<JwtClaims>;
+    getClaims(request: E, errorSender: ErrorSender): Promise<JwtClaims>;
 }
